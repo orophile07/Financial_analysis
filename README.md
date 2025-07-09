@@ -101,7 +101,7 @@ Welcome to an advanced **stock market analysis and forecasting** project focused
 
 Like the project? Let’s connect and collaborate!
 
-- 🔗 [LinkedIn](www.linkedin.com/in/soham-ghosh7704)
+- 🔗 [LinkedIn]([www.linkedin.com/in/soham-ghosh7704](https://www.linkedin.com/in/soham-ghosh7704/))
 - 🧠 [GitHub]([https://github.com/](https://github.com/orophile07))
 - ✨ Contributions welcome!
 
