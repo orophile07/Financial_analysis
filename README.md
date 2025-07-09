@@ -1,7 +1,7 @@
 # Financial_analysis
 🚀 Stock Price &amp; Volatility Forecasting Project using ARIMA | SARIMA | GARCH | XGBoost | LSTM 📊 End-to-end time series modeling on Tata Motors (TATAMOTORS.NS) using statistical &amp; ML models. 🎯 Accurate predictions, volatility estimation &amp; business insights for trading and investment strategy.
 
-# 📈 Tata Motors Stock Forecasting & Volatility Analysis
+# 📈 Stock Forecasting & Analysis
 
 Welcome to an advanced **stock market analysis and forecasting** project focused on **Tata Motors (TATAMOTORS.NS)**. This notebook brings together the power of **statistics, machine learning**, and **deep learning** to uncover price patterns, volatility trends, and future projections — all using real-time financial data.
 
