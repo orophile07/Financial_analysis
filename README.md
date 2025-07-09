@@ -38,27 +38,86 @@ Welcome to an advanced **stock market analysis and forecasting** project focused
 
 ---
 
-## 📊 Model Breakdown
+## 🔍 Why These Statistical Tests?
 
-### 🔁 ARIMA & SARIMA  
-- ✅ Captures autocorrelation & seasonality  
-- 🔮 30-day price prediction  
-- 📉 MAPE: *~1.4%*, R²: *~0.8721*
+Before we jump into forecasting the future, we need to understand the past — statistically! 📈  
+These foundational tests ensure our time series models stand on solid ground.
 
-### 📉 GARCH (EGARCH)  
-- ⚡ Models volatility clustering  
-- 🔮 7-day volatility forecast  
-- 📉 RMSE: *~0.64*, MSE: *~0.42*
+---
 
-### 🧠 XGBoost  
-- 🛠 Uses lag features + OHLCV data  
-- 🔮 7-day recursive prediction  
-- 📉 MAPE: *~0.92%*, R²: *~0.9512*
+### 🧪 1. ADF Test — *Stationarity Checker*
 
-### 🤖 LSTM Neural Network  
-- 🔍 Sequence learning with memory  
-- 🔮 7-day prediction  
-- 📉 MAPE: *~3.29%*, R²: *~0.9894*
+> **Use**: Tests whether a time series has a constant mean and variance over time.
+
+**Why it matters**:
+Many forecasting models (like ARIMA) require the series to be **stationary**.  
+The **Augmented Dickey-Fuller (ADF)** test helps us decide if differencing is needed.
+
+- ✅ **p-value < 0.05**: Data is **stationary** → Good for ARIMA  
+- ❌ **p-value ≥ 0.05**: Data is **non-stationary** → Needs differencing
+
+📌 **We used it** to confirm the need for differencing (d=1) in ARIMA/SARIMA.
+
+---
+
+### 🧩 2. Time Series Decomposition — *The Data Dissector*
+
+> **Use**: Breaks a time series into **Trend**, **Seasonality**, and **Noise (Residuals)**.
+
+**Why it matters**:
+Understanding the components makes it easier to **build accurate forecasts** and detect **hidden patterns**.
+
+- 📈 **Trend**: Long-term movement  
+- 🔁 **Seasonality**: Repeating cycles  
+- 🌀 **Residual**: Random noise
+
+📌 **We used it** to visualize structure and support model selection (e.g., SARIMA for seasonal patterns).
+
+---
+
+### 🔁 3. ACF & PACF — *The Lag Investigators*
+
+> **Use**: Help determine how past values relate to the present.
+
+- **ACF (AutoCorrelation Function)**: Measures correlation with past lags  
+- **PACF (Partial ACF)**: Shows pure correlation of each lag after removing the effects of previous lags
+
+**Why it matters**:
+They're critical for choosing the best ARIMA/SARIMA parameters:
+- `p` (from PACF): Auto-regressive lags
+- `q` (from ACF): Moving average lags
+
+📌 **We used them** to tune ARIMA → `(p=6, d=1, q=2)`
+
+---
+
+### 🧪 4. Ljung-Box Test — *The Residual Inspector*
+
+> **Use**: Checks if your model’s residuals are just white noise (i.e., random).
+
+**Why it matters**:
+After training a model, we want **no patterns left** in residuals.  
+The Ljung-Box test tells us whether autocorrelation is present in the residuals.
+
+- ✅ **p-value ≥ 0.05**: Residuals are random → Model is good  
+- ❌ **p-value < 0.05**: Residuals have structure → Model needs improvement
+
+📌 **We used it** to validate ARIMA, SARIMA, and GARCH models.
+
+---
+
+### ✅ Summary Table
+
+| Test           | Purpose                            | Why It’s Used                                       |
+|----------------|-------------------------------------|-----------------------------------------------------|
+| ADF Test       | Check for stationarity              | Prepares data for ARIMA by verifying stationarity   |
+| Decomposition  | Break into trend/seasonal/noise     | Helps choose appropriate forecasting strategy       |
+| ACF / PACF     | Detect autocorrelation at lags      | Select `p` and `q` for ARIMA/SARIMA                 |
+| Ljung-Box Test | Check model residual randomness     | Ensures no leftover patterns after modeling         |
+
+---
+
+> 🔍 These statistical tests are like the **diagnostic scans** of your data — they help you build smarter, more accurate models by revealing what’s beneath the surface.
 
 ---
 
@@ -101,8 +160,8 @@ Welcome to an advanced **stock market analysis and forecasting** project focused
 
 Like the project? Let’s connect and collaborate!
 
-- 🔗 [LinkedIn]((https://www.linkedin.com/in/soham-ghosh7704/))
-- 🧠 [GitHub]((https://github.com/orophile07))
+- 🔗 [LinkedIn](https://www.linkedin.com/in/soham-ghosh7704/)
+- 🧠 [GitHub](https://github.com/orophile07)
 - ✨ Contributions welcome!
 
 ---
