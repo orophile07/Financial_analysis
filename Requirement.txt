@@ -1,0 +1,27 @@
+# Core Libraries
+pandas==2.2.2              # Data manipulation and analysis
+numpy==1.26.4              # Numerical computations
+
+# Visualization
+matplotlib==3.8.4          # Plotting charts
+seaborn==0.13.2            # Statistical data visualization
+plotly==5.21.0             # Interactive visualizations
+
+# Data Source
+yfinance==0.2.38           # Yahoo Finance API wrapper
+
+# Statistical & Time Series Modeling
+statsmodels==0.14.2        # ARIMA, SARIMA models
+arch==6.3.0                # GARCH/EGARCH models
+
+# Machine Learning
+scikit-learn==1.4.2        # Preprocessing and metrics
+xgboost==2.0.3             # XGBoost regressor
+
+# Deep Learning (LSTM)
+tensorflow==2.16.1         # Backend for Keras
+keras==3.3.3               # LSTM model architecture
+
+# Optional (Notebook support)
+jupyterlab==4.2.1          # Jupyter Notebook/Lab
+nbformat==5.10.4           # Notebook formatting
